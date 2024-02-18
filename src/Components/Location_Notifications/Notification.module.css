@@ -1,0 +1,62 @@
+.notification-bg {
+  background-color: #f1efeb;
+  padding: 35px 20px;
+}
+
+.notification-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.notification-h1 {
+  color: #b4a77a;
+  margin-bottom: 0.7rem;
+}
+.notification-p {
+  margin-bottom: 0.5rem;
+}
+.button-holder {
+  margin-top: 15px;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.buttons {
+  background-color: #ffffff;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buttons:hover {
+  background-color: rgb(249, 250, 251);
+}
+
+.buttons:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.buttons:focus-visible {
+  box-shadow: none;
+}

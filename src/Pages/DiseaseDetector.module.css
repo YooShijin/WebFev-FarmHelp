@@ -1,0 +1,64 @@
+.detector-container {
+  text-align: center;
+  margin-top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  background-color: rgba(125, 125, 96, 0.484) ;
+  height: 700px;
+}
+
+.submit-button {
+  background-color: transparent;
+  border: 1px solid #266db6;
+  box-sizing: border-box;
+  color: #00132c;
+  font-family: "Avenir Next LT W01 Bold", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.submit-button:hover,
+.submit-button:active {
+  outline: 0;
+}
+
+.submit-button:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.submit-button:before {
+  background-color: #d5edf6;
+  content: "";
+  height: calc(100% + 3px);
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  transition: background-color 300ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.submit-button:hover:before {
+  background-color: #6dcff6;
+}
+
+@media (min-width: 768px) {
+  .submit-button {
+    padding: 16px 32px;
+  }
+}
+
+.image-preview {
+  height: 200px;
+  width: 300px;
+}
