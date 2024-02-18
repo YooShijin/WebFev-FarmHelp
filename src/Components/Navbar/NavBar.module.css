@@ -5,7 +5,7 @@
   left: 0;
   padding-left: 30px;
   /* height: var(--header-height); */
-  background: url(assets/menu-bg-edit.jpg);
+  background: url("public/assets/menu-bg-edit.jpg");
   background-repeat: repeat-x;
   background-position: bottom;
   z-index: 100;
