@@ -4,8 +4,10 @@ const FootElement = () => {
   return (
     <>
       <footer className={classes["footer"]}>
-        <img src="src/assets/logo.png" className="logo"></img>
-        <p className={classes["footer-p"]}>&copy; Copyright Farm-Help 2024, All rights reserved!</p>
+        <img src="assets/logo.png" className="logo"></img>
+        <p className={classes["footer-p"]}>
+          &copy; Copyright Farm-Help 2024, All rights reserved!
+        </p>
       </footer>
     </>
   );

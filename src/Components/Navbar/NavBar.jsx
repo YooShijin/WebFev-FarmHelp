@@ -18,8 +18,8 @@ const NavBar = () => {
   return (
     <header className={classes["header"]}>
       <nav className={classes["nav"]}>
-        <Link to = "/home">
-          <img src="src/assets/logo.png" alt="Farm Help Logo" className="logo"/>
+        <Link to="/home">
+          <img src="assets/logo.png" alt="Farm Help Logo" className="logo" />
         </Link>
         {/* <NavLink to="/" className={classes["nav__logo"]}></NavLink> */}
 
@@ -99,7 +99,7 @@ const NavBar = () => {
             </li>
           </ul>
           <img
-            src="src/assets/profile-placeholder.png"
+            src="assets/profile-placeholder.png"
             className={classes["profile-placeholder"]}
           ></img>
 

@@ -40,7 +40,7 @@ const AnimalHus = () => {
             </Link>
           </div>
         </div>
-        <img src="src/assets/animal-hus.jpg" className={classes.image}></img>
+        <img src="assets/animal-hus.jpg" className={classes.image}></img>
       </div>
     </div>
   );

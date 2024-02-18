@@ -31,10 +31,7 @@ const PointDetails = () => {
           </div>
         </div>
       </div>
-      <img
-        src="src/assets/agriculture-large.png"
-        className={classes.image}
-      ></img>
+      <img src="assets/agriculture-large.png" className={classes.image}></img>
     </div>
   );
 };
