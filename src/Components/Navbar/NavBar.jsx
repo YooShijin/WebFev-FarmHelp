@@ -1,9 +1,10 @@
 import classes from "./NavBar.module.css";
 import React, { useState } from "react";
+import { FaBars } from "react-icons/fa";
 import { NavLink, Link } from "react-router-dom";
 // import { IoClose, IoMenu } from "react-icons/io5";
 
-const NavBar = () => {
+const NavBar = ({ toggleSidebar }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -21,6 +22,12 @@ const NavBar = () => {
         <Link to="/home">
           <img src="assets/logo.png" alt="Farm Help Logo" className="logo" />
         </Link>
+        <div className={classes["nav__menu"]}>
+          {/* Toggle button for sidebar */}
+          <button className={classes["sidebar-toggle"]} onClick={toggleSidebar}>
+            <FaBars />
+          </button>
+        </div>
         {/* <NavLink to="/" className={classes["nav__logo"]}></NavLink> */}
 
         <div

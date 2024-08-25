@@ -1,64 +1,102 @@
 .detector-container {
-  text-align: center;
   margin-top: var(--header-height);
+  padding: 50px 20px;
+  background-color: #f5f5f5;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 50px;
-  background-color: rgba(125, 125, 96, 0.484) ;
-  height: 700px;
+  height: 100vh;
 }
 
-.submit-button {
-  background-color: transparent;
-  border: 1px solid #266db6;
-  box-sizing: border-box;
-  color: #00132c;
-  font-family: "Avenir Next LT W01 Bold", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 16px 23px;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.submit-button:hover,
-.submit-button:active {
-  outline: 0;
-}
-
-.submit-button:hover {
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.submit-button:before {
-  background-color: #d5edf6;
-  content: "";
-  height: calc(100% + 3px);
-  position: absolute;
-  right: -7px;
-  top: -9px;
-  transition: background-color 300ms ease-in;
+.frame {
+  background-color: #e7e8d1;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
   width: 100%;
-  z-index: -1;
+  max-width: 600px;
 }
 
-.submit-button:hover:before {
-  background-color: #6dcff6;
+.title {
+  font-size: 2.5rem;
+  color: #354c44;
+  margin-bottom: 10px;
 }
 
-@media (min-width: 768px) {
-  .submit-button {
-    padding: 16px 32px;
-  }
+.description {
+  color: #525c54;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.file-input {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 2px solid #b1a476;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.file-input:hover {
+  border-color: #6f6535;
 }
 
 .image-preview {
-  height: 200px;
-  width: 300px;
+  margin-top: 20px;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 2px solid #b1a476;
+}
+
+.result-container {
+  margin-top: 30px;
+}
+
+.detection-h2 {
+  font-size: 1.3rem;
+  color: #525c54;
+  margin-bottom: 10px;
+}
+
+.prediction-h1,
+.confidence-h1 {
+  color: #e14e4e;
+  font-weight: bold;
+}
+
+.submit-button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #354c44;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #6f6535;
+}
+
+@media (max-width: 768px) {
+  .frame {
+    padding: 30px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+  }
 }

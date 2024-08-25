@@ -15,7 +15,7 @@ const HeroSection = () => {
           your yield and protect your investment.
         </p>
         <div className={classes["button-holder"]}>
-          <Link to="/detector">
+          <Link to="/auth">
             <button
               className={classes["buttons"]}
               style={{

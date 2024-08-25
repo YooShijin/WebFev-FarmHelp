@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import classes from "./DiseaseDetector.module.css";
 
 const DiseaseDetector = () => {
@@ -6,58 +6,75 @@ const DiseaseDetector = () => {
   const [file, setFile] = useState();
   const [image, setImage] = useState();
   const [imageUploaded, setImageUploaded] = useState(false);
-  const formData = new FormData();
-  function onImageChange(e) {
+
+  const onImageChange = (e) => {
     if (e.target.files) {
       setImageUploaded(true);
+      setFile(URL.createObjectURL(e.target.files[0]));
+      setImage(e.target.files[0]);
     }
-    console.log(e.target.files);
+  };
 
-    setFile(URL.createObjectURL(e.target.files[0]));
-    setImage(e.target.files[0]);
+  const predictClickHandler = () => {
+    const formData = new FormData();
+    formData.append("im", image);
 
-    formData.append("file", image);
-  }
-
-  const predictClickHandler = (e) => {
     fetch("http://127.0.0.1:8000/detect", {
       method: "POST",
       headers: {
-        accept: "application/json",
-        "Content-Type": "multipart/form-data",
+        Accept: "application/json",
       },
-      formData,
+      body: formData,
     })
       .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => console.error("Error:", error));
-
-    setData({ prediction: "Dummy Disease", confidance: "68%" }); //Feeding dummy data for now as the Fetch is facing CORS issue
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
+
   return (
     <div className={classes["detector-container"]}>
-      <h1 style={{ marginTop: "50px" }}>Add an Image:</h1>
-      <input type="file" accept="image/*" onChange={onImageChange} />
-      {imageUploaded && <img src={file} className={classes["image-preview"]} />}
-      {data && (
-        <div>
-          <h2 className={classes["detection-h2"]}>
-            Prediction: {data.prediction}
-          </h2>
-          <h2 className={classes["detection-h2"]}>
-            Confidence: {data.confidance}
-          </h2>
-        </div>
-      )}
-      <span>
+      <div className={classes["frame"]}>
+        <h1 className={classes["title"]}>Detect Crop Disease</h1>
+        <p className={classes["description"]}>
+          Upload an image of your crop and get a prediction of any potential
+          disease.
+        </p>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={onImageChange}
+          className={classes["file-input"]}
+        />
+        {imageUploaded && (
+          <img src={file} alt="Preview" className={classes["image-preview"]} />
+        )}
+        {data && (
+          <div className={classes["result-container"]}>
+            <h2 className={classes["detection-h2"]}>
+              Prediction:{" "}
+              <span className={classes["prediction-h1"]}>{data.disease}</span>
+            </h2>
+            <h2 className={classes["detection-h2"]}>
+              Confidence:{" "}
+              <span className={classes["confidence-h1"]}>
+                {(data.confidence * 100).toFixed(2)}%
+              </span>
+            </h2>
+          </div>
+        )}
         <button
-          className={classes["submit-button"]}
           onClick={predictClickHandler}
+          className={classes["submit-button"]}
         >
           Predict
         </button>
-      </span>
+      </div>
     </div>
   );
 };
+
 export default DiseaseDetector;

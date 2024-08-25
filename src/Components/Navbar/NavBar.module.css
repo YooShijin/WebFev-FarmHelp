@@ -35,6 +35,19 @@
   font-size: var(--h2-font-size);
   font-family: var(--second-font);
 } */
+/* Sidebar toggle button */
+.sidebar-toggle {
+  display: none; /* Hide by default on larger screens */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #252525; /* Use your color scheme */
+  cursor: pointer;
+}
+
+.sidebar-toggle:hover {
+  color: #e05a48; /* Use your color scheme */
+}
 
 .nav__toggle,
 .nav__close {
@@ -109,4 +122,10 @@
 }
 .active:hover {
   color: #e05a48;
+}
+
+@media screen and (max-width: 1150px) {
+  .sidebar-toggle {
+    display: block; /* Show toggle button on mobile */
+  }
 }

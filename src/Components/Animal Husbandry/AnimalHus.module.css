@@ -1,90 +1,156 @@
 .image {
-  width: 48%;
-  height: 400px;
+  width: 45%;
+  height: auto;
+  max-height: 400px;
   margin: 0;
   margin-right: 40px;
 }
+
 .animal-hus-container {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
 }
-.animal-hus-text-container {
 
+.animal-hus-text-container {
   padding: 50px 30px;
+  flex: 1;
 }
+
 .animal-hus-subtext-container {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
   margin-top: 20px;
 }
+
 .animal-hus-h1 {
-  /* --background-color: rgb(180, 167, 122); */
-  line-height: 2.6rem;
+  line-height: 2.8rem;
   font-size: 2.5rem;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: rgb(180, 167, 122);
 }
+
 .animal-hus-p {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
+
 .animal-hus-h4 {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
+
 .animal-hus-p2 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: rgba(0, 0, 0, 0.726);
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .button-holder {
   display: flex;
-  justify-content: letf;
   gap: 30px;
   margin-top: 30px;
 }
 
 .buttons {
-  align-items: center;
-  appearance: none;
   background-color: #fff;
   border: 1px solid #dbdbdb;
-  border-radius: .375em;
-  box-shadow: none;
-  box-sizing: border-box;
+  border-radius: 0.375em;
   color: #363636;
   cursor: pointer;
-  display: inline-flex;
-  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 1rem;
   height: 2.5em;
-  justify-content: center;
-  line-height: 1.5;
-  padding: calc(.5em - 1px) 1em;
-  position: relative;
+  padding: 0.5em 1em;
   text-align: center;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: top;
-  white-space: nowrap;
-}
-
-.buttons:active {
-  border-color: #4a4a4a;
-  outline: 0;
-}
-
-.buttons:focus {
-  border-color: #485fc7;
-  outline: 0;
 }
 
 .buttons:hover {
   border-color: #b5b5b5;
 }
 
-.buttons:focus:not(:active) {
-  box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+@media (max-width: 1024px) {
+  .animal-hus-container {
+    flex-wrap: wrap;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .animal-hus-text-container {
+    padding: 30px 20px;
+  }
+
+  .animal-hus-h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .animal-hus-p {
+    font-size: 1rem;
+  }
+
+  .animal-hus-subtext-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .button-holder {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .animal-hus-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .animal-hus-h1 {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  .animal-hus-p {
+    font-size: 0.95rem;
+  }
+
+  .animal-hus-subtext-container {
+    gap: 10px;
+  }
+
+  .button-holder {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animal-hus-h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .animal-hus-p,
+  .animal-hus-p2 {
+    font-size: 0.85rem;
+  }
+
+  .button-holder {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttons {
+    width: 100%;
+    text-align: center;
+  }
 }

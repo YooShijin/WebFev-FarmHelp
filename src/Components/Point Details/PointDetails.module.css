@@ -1,52 +1,140 @@
 .image {
   width: 45%;
-
+  height: auto;
+  max-width: 600px; /* Limit max width for larger screens */
   margin: 0;
   margin-right: 40px;
+  min-height: 400px; /* Ensures the image has a good height on larger screens */
+  object-fit: cover; /* Keeps the image well-proportioned */
 }
 
 .points-container {
-  margin-top: 40px;
   display: flex;
-  gap: 15px;
-  padding: 0;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  gap: 20px;
+  flex-wrap: nowrap;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 80px 0;
 }
+
 .points-text-container {
-  margin-top: 10px;
+  flex: 1;
   padding: 30px;
 }
 
 .points-text-h1 {
-  font-size: 2.1rem;
-  margin-bottom: 8px;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
+
 .points-text-p {
-  font-size: 0.9rem;
-  margin-bottom: 6px;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .points-subtext-container {
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
   gap: 20px;
   margin-top: 20px;
 }
+
 .points-subtext-vertical {
   display: flex;
   flex-direction: column;
 }
+
 .bullet-symbol {
   height: 2.3rem;
   width: 2.3rem;
 }
+
 .points-text-h4 {
   font-size: 1.3rem;
-  margin: 10px 0px;
+  margin: 10px 0;
 }
+
 .points-text-p2 {
-    font-size: 0.8rem;
-    color: rgb(79, 77, 77);
+  font-size: 0.9rem;
+  color: rgb(79, 77, 77);
+}
+
+@media (max-width: 1024px) {
+  .points-container {
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .image {
+    width: 100%;
+    margin: 20px 0;
+    max-width: 100%; /* Ensures image doesn't exceed container */
+  }
+
+  .points-text-container {
+    padding: 20px;
+  }
+
+  .points-text-h1 {
+    font-size: 2rem;
+  }
+
+  .points-text-p {
+    font-size: 1rem;
+  }
+
+  .points-subtext-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .points-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .points-text-container {
+    padding: 20px;
+  }
+
+  .points-text-h1 {
+    font-size: 1.8rem;
+  }
+
+  .points-text-p {
+    font-size: 0.95rem;
+  }
+
+  .points-subtext-container {
+    gap: 10px;
+  }
+
+  .bullet-symbol {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .points-text-h1 {
+    font-size: 1.5rem;
+  }
+
+  .points-text-p,
+  .points-text-p2 {
+    font-size: 0.85rem;
+  }
+
+  .points-subtext-container {
+    gap: 10px;
+  }
+
+  .points-text-container {
+    padding: 15px;
+  }
 }

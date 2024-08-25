@@ -35,7 +35,7 @@ const AnimalHus = () => {
             <Link to="/error">
               <button className={classes["buttons"]}>Learn More</button>
             </Link>
-            <Link to="/error">
+            <Link to="/auth">
               <button className={classes["buttons"]}>Sign Up</button>
             </Link>
           </div>
