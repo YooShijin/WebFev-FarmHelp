@@ -47,7 +47,7 @@ The Farm Help Project is a web application designed to assist users with various
 
 ## Usage
 
-- Open the application in your browser at `http://localhost:3000`.
+- Open the application in your browser at `https://farmhelp.onrender.com/home`.
 - Navigate through the different sections using the navigation bar or sidebar.
 - Use the authentication routes to sign in or sign up.
 
