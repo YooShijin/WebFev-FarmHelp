@@ -15,7 +15,7 @@ const HeroSection = () => {
           your yield and protect your investment.
         </p>
         <div className={classes["button-holder"]}>
-          <Link to="/auth">
+          <Link to="/detector">
             <button
               className={classes["buttons"]}
               style={{
@@ -27,7 +27,7 @@ const HeroSection = () => {
               Try Now
             </button>
           </Link>
-          <Link to="/error">
+          <Link to="/auth">
             <button className={classes["buttons"]}>Learn More</button>
           </Link>
         </div>
